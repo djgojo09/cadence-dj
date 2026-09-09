@@ -67,8 +67,8 @@ function Practice() {
   const askReview = useServerFn(reviewInterview);
   const speech = useSpeechRecognition();
 
-  const [role, setRole] = useState(ROLES[0]);
-  const [level, setLevel] = useState(LEVELS[3]);
+  const [role, setRole] = useState<string>("Software Engineer");
+  const [level, setLevel] = useState<string>("Senior");
   const [stage, setStage] = useState<"setup" | "permission" | "live" | "scoring" | "done">("setup");
   const [micGranted, setMicGranted] = useState(false);
   const [questions, setQuestions] = useState<string[]>([]);
@@ -122,7 +122,7 @@ function Practice() {
       setQuestionIndex(0);
       setSeconds(0);
       setFeedback(null);
-      setTranscript([{ speaker: "interviewer", text: result.questions[0] }]);
+      setTranscript([{ speaker: "interviewer", text: result.questions[0] ?? "" }]);
       setStage("live");
       speech.start(appendAnswer);
     } catch (error) {
@@ -134,9 +134,10 @@ function Practice() {
 
   function nextQuestion() {
     const next = questionIndex + 1;
-    if (next >= questions.length) return;
+    const question = questions[next];
+    if (!question) return;
     setQuestionIndex(next);
-    setTranscript((prev) => [...prev, { speaker: "interviewer", text: questions[next] }]);
+    setTranscript((prev) => [...prev, { speaker: "interviewer", text: question }]);
   }
 
   async function finish() {
