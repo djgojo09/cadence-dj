@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
+import { Logo } from "@/components/Logo";
+
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -81,14 +83,10 @@ function AuthPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-6xl items-center px-5 py-4">
-          <Link to="/" className="flex items-center gap-2.5">
-            <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
-              P
-            </span>
-            <span className="font-display text-lg font-semibold tracking-tight text-primary">
-              Cadence
-            </span>
+          <Link to="/" className="flex items-center">
+            <Logo size={32} />
           </Link>
+
         </div>
       </header>
 
