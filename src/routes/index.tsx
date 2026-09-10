@@ -2,17 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Mic, ListChecks, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import { Logo } from "@/components/Logo";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Prepwave — Practice interviews out loud" },
+      { title: "Cadence — Practice interviews out loud" },
       {
         name: "description",
         content:
-          "Prepwave runs a live voice interview, transcribes every word, and returns a score with the exact lines to sharpen.",
+          "Cadence runs a live voice interview, transcribes every word, and returns a score with the exact lines to sharpen.",
       },
-      { property: "og:title", content: "Prepwave — Practice interviews out loud" },
+      { property: "og:title", content: "Cadence — Practice interviews out loud" },
       {
         property: "og:description",
         content: "Voice interview practice with a live transcript and scored AI feedback.",
@@ -48,14 +50,10 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <Link to="/" className="flex items-center gap-2.5">
-            <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
-              P
-            </span>
-            <span className="font-display text-lg font-semibold tracking-tight text-primary">
-              Prepwave
-            </span>
+          <Link to="/" className="flex items-center">
+            <Logo size={32} />
           </Link>
+
           <div className="flex items-center gap-2">
             {user ? (
               <>
@@ -91,7 +89,7 @@ function Landing() {
               Walk in like you already have the job.
             </h1>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
-              Prepwave runs a live voice interview, transcribes every word, then hands back a score
+              Cadence runs a live voice interview, transcribes every word, then hands back a score
               and the exact lines to sharpen before the real thing.
             </p>
             <div className="mt-8">
@@ -185,7 +183,7 @@ function Landing() {
 
       <footer className="bg-surface-dark">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-on-dark-muted">
-          <span className="font-display font-semibold text-on-dark">Prepwave</span>
+          <Logo size={26} inverted />
           <span>Practice out loud. Improve on purpose.</span>
         </div>
       </footer>

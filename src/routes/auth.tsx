@@ -7,16 +7,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
+import { Logo } from "@/components/Logo";
+
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Prepwave" },
+      { title: "Sign in — Cadence" },
       {
         name: "description",
-        content: "Sign in to Prepwave to run voice interview practice and keep your history.",
+        content: "Sign in to Cadence to run voice interview practice and keep your history.",
       },
-      { property: "og:title", content: "Sign in — Prepwave" },
+      { property: "og:title", content: "Sign in — Cadence" },
       { property: "og:description", content: "Sign in to practice interviews and track progress." },
     ],
   }),
@@ -81,14 +83,10 @@ function AuthPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-6xl items-center px-5 py-4">
-          <Link to="/" className="flex items-center gap-2.5">
-            <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
-              P
-            </span>
-            <span className="font-display text-lg font-semibold tracking-tight text-primary">
-              Prepwave
-            </span>
+          <Link to="/" className="flex items-center">
+            <Logo size={32} />
           </Link>
+
         </div>
       </header>
 

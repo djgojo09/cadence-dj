@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/_authenticated/history")({
   head: () => ({
     meta: [
-      { title: "Your progress — Prepwave" },
+      { title: "Your progress — Cadence" },
       {
         name: "description",
         content: "Review past voice interview sessions, scores, strengths and improvement tips.",
       },
-      { property: "og:title", content: "Your progress — Prepwave" },
+      { property: "og:title", content: "Your progress — Cadence" },
       { property: "og:description", content: "Past interview sessions and scores in one place." },
     ],
   }),

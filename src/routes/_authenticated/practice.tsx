@@ -18,13 +18,13 @@ import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
 export const Route = createFileRoute("/_authenticated/practice")({
   head: () => ({
     meta: [
-      { title: "Interview workspace — Prepwave" },
+      { title: "Interview workspace — Cadence" },
       {
         name: "description",
         content:
           "Choose a role and level, run a voice interview, follow the live transcript, and get scored feedback.",
       },
-      { property: "og:title", content: "Interview workspace — Prepwave" },
+      { property: "og:title", content: "Interview workspace — Cadence" },
       { property: "og:description", content: "Run a voice interview and get scored feedback." },
     ],
   }),

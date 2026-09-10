@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
+
 
 export const Route = createFileRoute("/_authenticated")({
   component: AuthenticatedLayout,
@@ -36,14 +38,10 @@ function AuthenticatedLayout() {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-4">
           <div className="flex items-center gap-6">
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
-                P
-              </span>
-              <span className="font-display text-lg font-semibold tracking-tight text-primary">
-                Prepwave
-              </span>
+            <Link to="/" className="flex items-center">
+              <Logo size={30} />
             </Link>
+
             <nav className="flex items-center gap-1">
               {tabs.map((tab) => (
                 <Link
