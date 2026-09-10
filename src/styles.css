@@ -87,7 +87,7 @@
   --muted-foreground: var(--brand-muted);
   --accent: var(--brand-deep);
   --accent-foreground: var(--brand-white);
-  --success: var(--brand-primary);
+  --success: #45636f;
   --success-foreground: var(--brand-white);
   --destructive: #b3261e;
   --destructive-foreground: var(--brand-white);
