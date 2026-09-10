@@ -11,12 +11,12 @@ import { useAuth } from "@/hooks/useAuth";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Prepwave" },
+      { title: "Sign in — Cadence" },
       {
         name: "description",
-        content: "Sign in to Prepwave to run voice interview practice and keep your history.",
+        content: "Sign in to Cadence to run voice interview practice and keep your history.",
       },
-      { property: "og:title", content: "Sign in — Prepwave" },
+      { property: "og:title", content: "Sign in — Cadence" },
       { property: "og:description", content: "Sign in to practice interviews and track progress." },
     ],
   }),
@@ -86,7 +86,7 @@ function AuthPage() {
               P
             </span>
             <span className="font-display text-lg font-semibold tracking-tight text-primary">
-              Prepwave
+              Cadence
             </span>
           </Link>
         </div>

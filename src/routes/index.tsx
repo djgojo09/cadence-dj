@@ -6,13 +6,13 @@ import { useAuth } from "@/hooks/useAuth";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Prepwave — Practice interviews out loud" },
+      { title: "Cadence — Practice interviews out loud" },
       {
         name: "description",
         content:
-          "Prepwave runs a live voice interview, transcribes every word, and returns a score with the exact lines to sharpen.",
+          "Cadence runs a live voice interview, transcribes every word, and returns a score with the exact lines to sharpen.",
       },
-      { property: "og:title", content: "Prepwave — Practice interviews out loud" },
+      { property: "og:title", content: "Cadence — Practice interviews out loud" },
       {
         property: "og:description",
         content: "Voice interview practice with a live transcript and scored AI feedback.",
@@ -53,7 +53,7 @@ function Landing() {
               P
             </span>
             <span className="font-display text-lg font-semibold tracking-tight text-primary">
-              Prepwave
+              Cadence
             </span>
           </Link>
           <div className="flex items-center gap-2">
@@ -91,7 +91,7 @@ function Landing() {
               Walk in like you already have the job.
             </h1>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
-              Prepwave runs a live voice interview, transcribes every word, then hands back a score
+              Cadence runs a live voice interview, transcribes every word, then hands back a score
               and the exact lines to sharpen before the real thing.
             </p>
             <div className="mt-8">
@@ -185,7 +185,7 @@ function Landing() {
 
       <footer className="bg-surface-dark">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-on-dark-muted">
-          <span className="font-display font-semibold text-on-dark">Prepwave</span>
+          <span className="font-display font-semibold text-on-dark">Cadence</span>
           <span>Practice out loud. Improve on purpose.</span>
         </div>
       </footer>

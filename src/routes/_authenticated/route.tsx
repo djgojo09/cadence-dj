@@ -41,7 +41,7 @@ function AuthenticatedLayout() {
                 P
               </span>
               <span className="font-display text-lg font-semibold tracking-tight text-primary">
-                Prepwave
+                Cadence
               </span>
             </Link>
             <nav className="flex items-center gap-1">

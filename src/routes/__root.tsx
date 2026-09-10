@@ -78,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Prepwave — AI voice interview practice" },
+      { title: "Cadence — AI voice interview practice" },
       {
         name: "description",
         content:
           "Practice interviews out loud with an AI interviewer, read a live transcript, and get scored feedback with tips.",
       },
-      { property: "og:title", content: "Prepwave — AI voice interview practice" },
+      { property: "og:title", content: "Cadence — AI voice interview practice" },
       {
         property: "og:description",
         content: "Rehearse by voice, see a live transcript, and get scored AI feedback.",
