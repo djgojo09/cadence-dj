@@ -40,7 +40,9 @@ function AuthenticatedLayout() {
               <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
                 P
               </span>
-              <span className="font-display text-lg font-semibold tracking-tight">Prepwave</span>
+              <span className="font-display text-lg font-semibold tracking-tight text-primary">
+                Prepwave
+              </span>
             </Link>
             <nav className="flex items-center gap-1">
               {tabs.map((tab) => (

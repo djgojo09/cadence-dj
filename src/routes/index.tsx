@@ -52,7 +52,9 @@ function Landing() {
             <span className="grid size-8 place-items-center rounded-lg bg-primary font-display text-sm font-bold text-primary-foreground">
               P
             </span>
-            <span className="font-display text-lg font-semibold tracking-tight">Prepwave</span>
+            <span className="font-display text-lg font-semibold tracking-tight text-primary">
+              Prepwave
+            </span>
           </Link>
           <div className="flex items-center gap-2">
             {user ? (
@@ -161,9 +163,29 @@ function Landing() {
         </section>
       </main>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-muted-foreground">
-          <span>Prepwave</span>
+      <section className="bg-surface-deep">
+        <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-16 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="font-display text-2xl font-semibold text-on-dark">
+              Ready for your next interview?
+            </h2>
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-on-dark-muted">
+              Run a full voice session in under ten minutes and get scored feedback right away.
+            </p>
+          </div>
+          <Button
+            asChild
+            size="lg"
+            className="bg-on-dark px-7 text-surface-deep hover:bg-on-dark-muted"
+          >
+            <Link to={primaryTo}>Start a practice interview</Link>
+          </Button>
+        </div>
+      </section>
+
+      <footer className="bg-surface-dark">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-on-dark-muted">
+          <span className="font-display font-semibold text-on-dark">Prepwave</span>
           <span>Practice out loud. Improve on purpose.</span>
         </div>
       </footer>
