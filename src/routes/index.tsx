@@ -182,8 +182,16 @@ function Landing() {
       </section>
 
       <footer className="bg-surface-dark">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-on-dark-muted">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-6 text-sm text-on-dark-muted">
           <Logo size={26} inverted />
+          <nav className="flex gap-5">
+            <Link to="/interview-questions" className="hover:text-on-dark">
+              Questions by role
+            </Link>
+            <Link to="/interview-prep-guide" className="hover:text-on-dark">
+              Prep guide
+            </Link>
+          </nav>
           <span>Practice out loud. Improve on purpose.</span>
         </div>
       </footer>
