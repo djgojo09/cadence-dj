@@ -12,8 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as InterviewPrepGuideRouteImport } from './routes/interview-prep-guide'
 import { Route as AuthenticatedHistoryRouteImport } from './routes/_authenticated/history'
 import { Route as AuthenticatedPracticeRouteImport } from './routes/_authenticated/practice'
+import { Route as InterviewQuestionsIndexRouteImport } from './routes/interview-questions/index'
+import { Route as InterviewQuestionsRoleRouteImport } from './routes/interview-questions/$role'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -29,6 +32,11 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InterviewPrepGuideRoute = InterviewPrepGuideRouteImport.update({
+  id: '/interview-prep-guide',
+  path: '/interview-prep-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedHistoryRoute = AuthenticatedHistoryRouteImport.update({
   id: '/history',
   path: '/history',
@@ -39,45 +47,84 @@ const AuthenticatedPracticeRoute = AuthenticatedPracticeRouteImport.update({
   path: '/practice',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const InterviewQuestionsIndexRoute = InterviewQuestionsIndexRouteImport.update({
+  id: '/interview-questions/',
+  path: '/interview-questions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterviewQuestionsRoleRoute = InterviewQuestionsRoleRouteImport.update({
+  id: '/interview-questions/$role',
+  path: '/interview-questions/$role',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/interview-prep-guide': typeof InterviewPrepGuideRoute
   '/history': typeof AuthenticatedHistoryRoute
   '/practice': typeof AuthenticatedPracticeRoute
+  '/interview-questions/$role': typeof InterviewQuestionsRoleRoute
+  '/interview-questions/': typeof InterviewQuestionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/interview-prep-guide': typeof InterviewPrepGuideRoute
   '/history': typeof AuthenticatedHistoryRoute
   '/practice': typeof AuthenticatedPracticeRoute
+  '/interview-questions/$role': typeof InterviewQuestionsRoleRoute
+  '/interview-questions': typeof InterviewQuestionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/interview-prep-guide': typeof InterviewPrepGuideRoute
   '/_authenticated/history': typeof AuthenticatedHistoryRoute
   '/_authenticated/practice': typeof AuthenticatedPracticeRoute
+  '/interview-questions/$role': typeof InterviewQuestionsRoleRoute
+  '/interview-questions/': typeof InterviewQuestionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/history' | '/practice'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/interview-prep-guide'
+    | '/history'
+    | '/practice'
+    | '/interview-questions/$role'
+    | '/interview-questions/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/history' | '/practice'
+  to:
+    | '/'
+    | '/auth'
+    | '/interview-prep-guide'
+    | '/history'
+    | '/practice'
+    | '/interview-questions/$role'
+    | '/interview-questions'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/interview-prep-guide'
     | '/_authenticated/history'
     | '/_authenticated/practice'
+    | '/interview-questions/$role'
+    | '/interview-questions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  InterviewPrepGuideRoute: typeof InterviewPrepGuideRoute
+  InterviewQuestionsRoleRoute: typeof InterviewQuestionsRoleRoute
+  InterviewQuestionsIndexRoute: typeof InterviewQuestionsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -103,6 +150,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/interview-prep-guide': {
+      id: '/interview-prep-guide'
+      path: '/interview-prep-guide'
+      fullPath: '/interview-prep-guide'
+      preLoaderRoute: typeof InterviewPrepGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/history': {
       id: '/_authenticated/history'
       path: '/history'
@@ -116,6 +170,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/practice'
       preLoaderRoute: typeof AuthenticatedPracticeRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/interview-questions/': {
+      id: '/interview-questions/'
+      path: '/interview-questions'
+      fullPath: '/interview-questions/'
+      preLoaderRoute: typeof InterviewQuestionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interview-questions/$role': {
+      id: '/interview-questions/$role'
+      path: '/interview-questions/$role'
+      fullPath: '/interview-questions/$role'
+      preLoaderRoute: typeof InterviewQuestionsRoleRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -137,6 +205,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  InterviewPrepGuideRoute: InterviewPrepGuideRoute,
+  InterviewQuestionsRoleRoute: InterviewQuestionsRoleRoute,
+  InterviewQuestionsIndexRoute: InterviewQuestionsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
