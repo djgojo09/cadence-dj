@@ -1,11 +1,7 @@
-# Roadmap
+# Cadence roadmap
 
-- [x] Enable Cloud (auth + database)
-- [x] Tables: profiles, interview_sessions
-- [ ] Design tokens (modern minimal, dark, restrained)
-- [ ] Landing page
-- [ ] Auth page (email/password + Google)
-- [ ] Interview workspace: role/level picker, mic-permission explainer, voice capture, live transcript
-- [ ] AI feedback (scores, strengths, improvement tips) via Lovable AI
-- [ ] History + progress page
-- [ ] Responsive polish + per-route metadata
+## Done
+- [x] Login/signup end to end: email/password + Google enabled, signup email-confirmation screen, profile auto-creation verified, wrong-password errors and signed-out redirect tested
+
+## Open
+- [ ] (Optional) Switch to a user-owned Supabase project — only if direct database dashboard access is needed; blocked on user creating a Supabase project
