@@ -187,6 +187,8 @@ function AuthPage() {
               ? "New here? Create an account"
               : "Already have an account? Sign in"}
           </button>
+          </>
+          )}
         </div>
       </main>
     </div>
