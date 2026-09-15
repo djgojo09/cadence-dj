@@ -98,6 +98,27 @@ function AuthPage() {
 
       <main className="flex flex-1 items-center justify-center px-5 py-12">
         <div className="w-full max-w-sm rounded-2xl border border-border bg-card p-7">
+          {confirmSent ? (
+            <div className="text-center">
+              <h1 className="font-display text-2xl font-semibold">Check your email</h1>
+              <p className="mt-3 text-sm text-muted-foreground">
+                We sent a confirmation link to <span className="font-medium text-foreground">{email}</span>.
+                Click it to activate your account, then sign in.
+              </p>
+              <Button
+                variant="outline"
+                className="mt-6 w-full"
+                size="lg"
+                onClick={() => {
+                  setConfirmSent(false);
+                  setMode("signin");
+                }}
+              >
+                Back to sign in
+              </Button>
+            </div>
+          ) : (
+          <>
           <h1 className="font-display text-2xl font-semibold">
             {mode === "signin" ? "Sign in" : "Create your account"}
           </h1>
